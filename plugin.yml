@@ -1,0 +1,23 @@
+name: bullytrolls
+main: bullytrolls\bullytrolls
+version: 1.0.0
+api: [1.11.0]
+load: POSTWORLD
+author: haniokasai
+description: 荒らしをいじめよう！
+website: haniokasai.com
+
+commands:
+ bullytrolls:
+   aliases: [bt, bully]
+   description: bullytrolls commands.
+   permission: bullytrolls
+   
+permissions:
+ bullytrolls:
+  default: op
+  description: bullytrollsの権限
+  children:
+   bullytrolls.command:
+    default: op
+    bullytrolls: /bl いじめてあげるコマンドの権限
