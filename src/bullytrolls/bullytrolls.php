@@ -46,6 +46,9 @@ class bullytrolls extends PluginBase implements Listener{
 						if(!isset($this->izimeta[$kname])){
 							$sender->sendMessage(TextFormat::RED." [Bullytrolls] ".$kname."をいじめました。");
 							$this->getLogger()->info(TextFormat::RED." [Bullytrolls] ".$name."が".$kname."をいじめました。");
+foreach($playerk->getEffects() as $effect){
+								$playerk->removeEffect($effect->getId());//エフェクトの除去
+							}
 							///////
 							$effect = Effect::getEffect(10); //エフェクトID
 							$effect->setVisible(true); //パーティクル
@@ -61,10 +64,19 @@ class bullytrolls extends PluginBase implements Listener{
 							//////
 							$effect = Effect::getEffect(9); //エフェクトID
 							$effect->setVisible(true); //パーティクル
+							$effect->setAmplifier(10000);//レベル
+							$effect->setDuration(10000*20); //20x秒数で時間
+							$playerk->addEffect($effect) ;//エフェクトの追加
+	///////
+							$effect = Effect::getEffect(19); //エフェクトID
+							$effect->setVisible(true); //パーティクル
 							$effect->setAmplifier(100);//レベル
 							$effect->setDuration(10000*20); //20x秒数で時間
 							$playerk->addEffect($effect) ;//エフェクトの追加
 							//////
+
+							//////
+
 							$this->izimeta[$kname] = $name;
 							break;
 						}else{
