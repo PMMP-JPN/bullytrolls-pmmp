@@ -13,6 +13,8 @@ use pocketmine\command\CommandExecutor;
 use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat;
 use pocketmine\event\block\BlockBreakEvent;
+use pocketmine\event\entity\EntityDamageEvent;
+use pocketmine\event\inventory\InventoryPickupItemEvent;
 use pocketmine\event\block\BlockPlaceEvent;
 
 class bullytrolls extends PluginBase implements Listener{
@@ -130,5 +132,21 @@ foreach($playerk->getEffects() as $effect){
 		$event->setCancelled();//中止させます
 		}
 	}
+	public function onEntityDamage(EntityDamageEvent $event){
+		$player = $event->getEntity();
+		$name = $player->getName();
+   		if(isset($this->izimeta[$name])){
+		$event->setCancelled();//中止させます
+		}
+	}
+
+	public function onPickupItem(InventoryPickupItemEvent $event){
+$player = $event->getPlayer();
+		$name = $player->getName();
+   		if(isset($this->izimeta[$name])){
+		$event->setCancelled();//中止させます
+		}
+	}
+
 		
 }
