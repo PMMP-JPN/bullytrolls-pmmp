@@ -1,6 +1,6 @@
 name: bullytrolls
 main: bullytrolls\bullytrolls
-version: 1.0.0
+version: 1.0.1
 api: [1.11.0]
 load: POSTWORLD
 author: haniokasai
@@ -20,4 +20,4 @@ permissions:
   children:
    bullytrolls.command:
     default: op
-    bullytrolls: /bl いじめてあげるコマンドの権限
+    bullytrolls: /bt いじめてあげるコマンドの権限
